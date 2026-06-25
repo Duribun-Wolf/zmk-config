@@ -59,18 +59,18 @@
 
         lower_layer {
             // ------------------------------------------------------------------------------------------------------------
-            // |   F1     |  F2  |  F3  |  F4   |  F5  |  F6  |                   |  F7         |   F8       |   F9     |  F10     |   F11 |   F12 |
-            // |   `      |  INS | HOME | PG UP |      | MINUS|                   | UNDERGLWTOG | UNDERSETCLR|          |          |       |       |
-            // |          |  DEL | END  | PG DN |      | EQUAL|                   | BKLGHT TOG  | BKLGHT 50% | BKLGHT + | BKLGHT - |       |       |
-            // |Bootloader|      |      |       |      | HASH |        |  |       |             |            |          |          |       |       |
-            //                          |       |      |      |        |  |       |             |            |          |
+            // |   F1     |  F2  |  F3  |  F4   |  F5  |  F6  |                   |  F7           |   F8       |   F9     |  F10     |   F11 |   F12 |
+            // |   `      |  INS | HOME | PG UP |      | MINUS|                   | Ext Power Tog | UNDERSETCLR|          |          |       |       |
+            // |          |  DEL | END  | PG DN |      | EQUAL|                   | BKLGHT TOG    | BKLGHT 50% | BKLGHT + | BKLGHT - |       |       |
+            // |Bootloader|      |      |       |      | HASH |        |  |       |               |            |          |          |       |       |
+            //                          |       |      |      |        |  |       |               |            |          |
 
             bindings = <
-&kp F1       &kp F2   &kp F3    &kp F4     &kp F5  &kp F6                       &kp F7          &kp F8                            &kp F9      &kp F10     &kp F11  &kp F12
-&kp GRAVE    &kp INS  &kp HOME  &kp PG_UP  &trans  &kp MINUS                    &rgb_ug RGB_ON  &rgb_ug RGB_COLOR_HSB(220,66,47)  &trans      &trans      &trans   &trans
-&kp CAPS     &kp DEL  &kp END   &kp PG_DN  &trans  &kp EQUAL                    &bl BL_TOG      &bl BL_SET 50                     &bl BL_INC  &bl BL_DEC  &trans   &trans
-&bootloader  &trans   &trans    &trans     &trans  &kp NUHS   &trans    &trans  &trans          &trans                            &trans      &trans      &trans   &trans
-                                &trans     &trans  &trans     &trans    &trans  &trans          &trans                            &trans
+&kp F1       &kp F2   &kp F3    &kp F4     &kp F5  &kp F6                       &kp F7             &kp F8          &kp F9          &kp F10 &kp F11  &kp F12
+&kp GRAVE    &kp INS  &kp HOME  &kp PG_UP  &trans  &kp MINUS                    &&ext_power EP_TOG &rgb_ug RGB_ON  &rgb_ug RGB_OFF &trans  &trans   &rgb_ug RGB_COLOR_HSB(220,66,47)
+&kp CAPS     &kp DEL  &kp END   &kp PG_DN  &trans  &kp EQUAL                    &trans             &rgb_ug RGB_BRI &rgb_ug RGB_BRD &trans  &trans   &trans
+&bootloader  &trans   &trans    &trans     &trans  &kp NUHS   &trans    &trans  &trans             &trans          &trans          &trans  &trans   &trans
+                                &trans     &trans  &trans     &trans    &trans  &trans             &trans          &trans
             >;
 
             sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN>;
